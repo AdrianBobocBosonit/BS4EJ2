@@ -1,0 +1,7 @@
+server:
+  port: '8081'
+url: www.bosonit.com
+password: password
+spring:
+  profiles:
+    active: Perfil1
