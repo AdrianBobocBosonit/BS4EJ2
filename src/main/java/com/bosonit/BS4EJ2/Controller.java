@@ -53,4 +53,21 @@ public class Controller {
         Perfil2 perfil2 = new Perfil2();
         perfil2.miFuncion();
     }
+
+    @Value("${spring.profiles.active")
+    String perfil;
+
+    @GetMapping("/perfiles")
+    public void getPerfil() {
+        if (perfil.equals("Perfil1")) {
+            Perfil1 perfil11 = new Perfil1();
+            perfil11.miFuncion();
+        } else if (perfil.equals("Perfil2")) {
+            Perfil2 perfil22 = new Perfil2();
+            perfil22.miFuncion();
+        } else {
+            System.out.println("NO HA PASAO NA, HAS PASADO " + perfil);
+        }
+        System.out.println("ESTO ES LO QUE SE LE HA PASADO: " + perfil);
+    }
 }
